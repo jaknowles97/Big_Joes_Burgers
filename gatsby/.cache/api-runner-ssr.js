@@ -1,4 +1,10 @@
 var plugins = [{
+      plugin: require('C:/Users/andrew/personalProjects/Big_Joes_Burgers/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/andrew/personalProjects/Big_Joes_Burgers/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"7ye8n6xs","dataset":"production","watchMode":true,"token":"skaQEHI4NkBeMGQbjTBhgm64EMYOtcZDIVqo7SCwORHMbPcZYlrztQ3wKRvYLaYIazVSJYIadUtO2737cz4NiIct59L34fxr4fzKJPA2ACfvJLr2CG8GaTGy29NihsbDn8jNMlrVkU7CCs2LMlnlx6A2IkPKnD6bPMQifExw25NiJ1PPjJ7E"},
+    },{
       plugin: require('C:/Users/andrew/personalProjects/Big_Joes_Burgers/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]
