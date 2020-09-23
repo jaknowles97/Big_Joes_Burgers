@@ -3,14 +3,14 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const PizzaGridStyles = styled.div`
+const BurgerGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 4rem;
   grid-auto-rows: auto auto 500px;
 `;
 
-const PizzaStyles = styled.div`
+const BurgerStyles = styled.div`
   display: grid;
   /* Take your row sizing not from the pizzaStyles div, but from the  PizzaGridStyles grid */
   @supports not (grid-template-rows: subgrid) {
