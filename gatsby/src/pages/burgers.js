@@ -4,11 +4,11 @@ import BurgerList from '../components/BurgerList';
 import ToppingsFilter from '../components/ToppingsFilter';
 
 
-const BurgersPage = ({ data }) => {
+const BurgersPage = ({ data, pageContext}) => {
     const burgers = data.burgers.nodes;
     return (
         <>
-            <ToppingsFilter />
+            <ToppingsFilter activeTopping={pageContext.topping}/>
             <BurgerList burgers={burgers} />
         </>
     )
@@ -16,8 +16,10 @@ const BurgersPage = ({ data }) => {
 
 
 export const query = graphql`
-  query BurgerQuery {
-    burgers: allSanityBurger {
+  query BurgerQuery($toppingRegex: String) {
+    burgers: allSanityBurger(
+      filter: { toppings: { elemMatch: { name: { regex: $toppingRegex } } } }
+    ) {
       nodes {
         name
         id
@@ -30,6 +32,9 @@ export const query = graphql`
         }
         image {
           asset {
+            fixed(width: 600, height: 200) {
+              ...GatsbySanityImageFixed
+            }
             fluid(maxWidth: 400) {
               ...GatsbySanityImageFluid
             }

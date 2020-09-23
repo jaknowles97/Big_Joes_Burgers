@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import topping from '../../../sanity/schemas/topping';
 
 const ToppingsStyles = styled.div`
   display: flex;
@@ -55,7 +56,7 @@ function countBurgersInToppings(burgers) {
   return sortedToppings;
 }
 
-export default function ToppingsFilter() {
+export default function ToppingsFilter({ activeTopping }) {
   // Get a list of all the toppings
   // Get a list of all the Burgers with their toppings
   const { toppings, burgers } = useStaticQuery(graphql`
@@ -80,10 +81,14 @@ export default function ToppingsFilter() {
   // Count how many burgers are in each topping
   const toppingsWithCounts = countBurgersInToppings(burgers.nodes);
   console.log(toppingsWithCounts);
-  // Loop over the list of toppings and display the topping and the count of burgers in that topping
+  // Loop over the list of toppings and display the topping and the count of burgerss in that topping
   // Link it up.. ...  . . .
   return (
     <ToppingsStyles>
+        <Link to="/burgers">
+            <span className="name">All</span>
+            <span className="count">{burgers.nodes.length}</span>
+        </Link>
       {toppingsWithCounts.map((topping) => (
         <Link to={`/topping/${topping.name}`} key={topping.id}>
           <span className="name">{topping.name}</span>
