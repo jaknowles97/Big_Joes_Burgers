@@ -1,11 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import BurgerList from '../components/BurgerList';
+import ToppingsFilter from '../components/ToppingsFilter';
+
 
 const BurgersPage = ({ data }) => {
     const burgers = data.burgers.nodes;
     return (
         <>
+            <ToppingsFilter />
             <BurgerList burgers={burgers} />
         </>
     )

@@ -1,0 +1,1 @@
+{"data":{"toppings":{"nodes":[{"name":"lettuce","id":"-f776efeb-83c4-5886-b0ca-9c39e1145c8b","vegetarian":true},{"name":"tomato","id":"-9fa973e7-8ed4-55ca-bb9d-aeb996758ef4","vegetarian":true}]},"burgers":{"nodes":[{"toppings":[{"name":"lettuce","id":"-f776efeb-83c4-5886-b0ca-9c39e1145c8b"}]},{"toppings":[{"name":"tomato","id":"-9fa973e7-8ed4-55ca-bb9d-aeb996758ef4"}]}]}}}

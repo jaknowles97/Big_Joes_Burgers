@@ -28,23 +28,25 @@ const BurgerStyles = styled.div`
 
 function SingleBurger({ burger }) {
   return (
-    <div>
+    <BurgerStyles>
       <Link to={`/burger/${burger.slug.current}`}>
         <h2>
           <span className="mark">{burger.name}</span>
         </h2>
         <p>{burger.toppings.map((topping) => topping.name).join(', ')}</p>
+        <Img fluid={burger.image.asset.fluid} alt={burger.name} />
+
       </Link>
-    </div>
+    </BurgerStyles>
   );
 }
 
 export default function BurgerList({ burgers }) {
   return (
-    <div>
+    <BurgerGridStyles>
       {burgers.map((burger) => (
         <SingleBurger key={burger.id} burger={burger} />
       ))}
-    </div>
+    </BurgerGridStyles>
   );
 }
