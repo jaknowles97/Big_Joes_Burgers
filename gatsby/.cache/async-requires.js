@@ -8,6 +8,7 @@ exports.components = {
   "component---src-pages-bigjoecrew-js": () => import("./../../../src/pages/bigjoecrew.js" /* webpackChunkName: "component---src-pages-bigjoecrew-js" */),
   "component---src-pages-burgers-js": () => import("./../../../src/pages/burgers.js" /* webpackChunkName: "component---src-pages-burgers-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-order-js": () => import("./../../../src/pages/order.js" /* webpackChunkName: "component---src-pages-order-js" */)
+  "component---src-pages-order-js": () => import("./../../../src/pages/order.js" /* webpackChunkName: "component---src-pages-order-js" */),
+  "component---src-templates-burger-js": () => import("./../../../src/templates/Burger.js" /* webpackChunkName: "component---src-templates-burger-js" */)
 }
 

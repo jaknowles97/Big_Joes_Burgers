@@ -11,6 +11,7 @@ exports.components = {
   "component---src-pages-bigjoecrew-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\pages\\bigjoecrew.js"))),
   "component---src-pages-burgers-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\pages\\burgers.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\pages\\index.js"))),
-  "component---src-pages-order-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\pages\\order.js")))
+  "component---src-pages-order-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\pages\\order.js"))),
+  "component---src-templates-burger-js": hot(preferDefault(require("C:\\Users\\andrew\\personalProjects\\Big_Joes_Burgers\\gatsby\\src\\templates\\Burger.js")))
 }
 

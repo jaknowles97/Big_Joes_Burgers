@@ -2,7 +2,7 @@ import path from 'path';
 
 async function turnBurgersIntoPages({ graphql, actions }) {
   // 1. Get a template for this page
-  const pizzaTemplate = path.resolve('./src/templates/Burger.js');
+  const burgerTemplate = path.resolve('./src/templates/Burger.js');
   // 2. Query all burgers
   const { data } = await graphql(`
     query {
@@ -21,10 +21,10 @@ async function turnBurgersIntoPages({ graphql, actions }) {
   data.burgers.nodes.forEach((burger) => {
     actions.createPage({
       // What is the URL for this new page??
-      path: `burger/${pizza.slug.current}`,
-      component: pizzaTemplate,
+      path: `burger/${burger.slug.current}`,
+      component: burgerTemplate,
       context: {
-        slug: pizza.slug.current,
+        slug: burger.slug.current,
       },
     });
   });
