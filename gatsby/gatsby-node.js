@@ -91,6 +91,45 @@ async function fetchBeersAndTurnIntoNodes({
     }
 }
 
+async function turnBigJoeCrewIntoPages({ graphql, actions }) {
+    // 1. Query all slicemasters
+    const { data } = await graphql(`
+      query {
+        bigjoecrew: allSanityPerson {
+          totalCount
+          nodes {
+            name
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    `);
+    // TODO: 2. Turn each crew member into their own page (TODO)
+    // 3. Figure out how many pages there are based on how many crew members there are, and how many per page!
+    const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+    const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
+    console.log(
+      `There are ${data.bigjoecrew.totalCount} total people. And we have ${pageCount} pages with ${pageSize} per page`
+    );
+    // 4. Loop from 1 to n and create the pages for them
+    Array.from({ length: pageCount }).forEach((_, i) => {
+      console.log(`Creating page ${i}`);
+      actions.createPage({
+        path: `/bigjoecrew/${i + 1}`,
+        component: path.resolve('./src/pages/bigjoecrew.js'),
+        // This data is pass to the template when we create it
+        context: {
+          skip: i * pageSize,
+          currentPage: i + 1,
+          pageSize,
+        },
+      });
+    });
+  }
+
 export async function sourceNodes(params) {
     // fetch a list of beers and source them into our gatsby API!
     await Promise.all([fetchBeersAndTurnIntoNodes(params)]);
@@ -102,6 +141,7 @@ export async function createPages(params) {
     await Promise.all([
         turnBurgersIntoPages(params),
         turnToppingsIntoPages(params),
+        turnBigJoeCrewIntoPages(params),
     ]);
     // 1. Burgers
     // 2. Toppings
